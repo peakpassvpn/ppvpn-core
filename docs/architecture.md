@@ -6,7 +6,7 @@
 
 ```mermaid
 flowchart LR
-  Backend["jiluoyun-backend"] -->|"Profile v2"| Profile["profile: 解析、迁移、校验"]
+  Backend["ppvpn-backend"] -->|"Profile v2"| Profile["profile: 解析、迁移、校验"]
   Desktop["桌面 App"] -->|"Core API v1 + 会话密钥"| API["api / ipc"]
   Mobile["Network Extension / VpnService"] -->|"mobile.Bridge JSON DTO"| Runtime["internal/runtime"]
   API --> Runtime

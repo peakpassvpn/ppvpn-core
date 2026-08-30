@@ -1,10 +1,10 @@
 # Desktop 平台接入
 
-桌面产品只依赖版本化的 jiluoyun-core 公共契约，不感知或选择 core 的内部实现。
+桌面产品只依赖版本化的 ppvpn-core 公共契约，不感知或选择 core 的内部实现。
 
 ## Windows
 
-特权 `jiluoyun-service` 作为唯一 runtime owner 启动 Windows x64 core 制品，先读取
+特权 `ppvpn-service` 作为唯一 runtime owner 启动 Windows x64 core 制品，先读取
 `version` 并要求 Core API v1、Profile Schema v2。service 负责权限、TUN、路由、DNS、
 进程校验和控制通道；Profile 的 `DIRECT`、`REJECT`、selected/fixed-node `PROXY`
 语义只由 core 判定。
@@ -16,7 +16,7 @@ listener，同一端口支持 HTTP 和 SOCKS5 并固定走该节点。service �
 
 ## macOS
 
-`build/JiluoyunCore.xcframework` 提供 macOS 13+ universal slice，运行在
+`build/PPVPNCore.xcframework` 提供 macOS 13+ universal slice，运行在
 `NETransparentProxyProvider` System Extension 进程内。公开 Objective-C API 包括：
 
 - `MobileBridge.start/applyProfile/stop/status`
@@ -32,7 +32,7 @@ Provider 把 Apple flow 的 hostname、目标 IP、端口和 TCP/UDP 编码成�
 `classifyFlow`，不能同步拨号。selected 在两次调用之间切换时，`openFlow` 仍执行首次
 decision 的 node；Profile snapshot 已替换时则拒绝旧 decision。
 
-Objective-C module 名为 `JiluoyunCore`；生成头文件中的关键签名是：
+Objective-C module 名为 `PPVPNCore`；生成头文件中的关键签名是：
 
 ```objc
 - (NSString *)classifyFlow:(NSString *)flowJSON error:(NSError **)error;

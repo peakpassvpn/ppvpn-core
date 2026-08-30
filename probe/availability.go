@@ -11,7 +11,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/jiluoyun/jiluoyun-core/localproxy"
+	"github.com/peakpassvpn/ppvpn-core/localproxy"
 )
 
 type AvailabilityResult struct {

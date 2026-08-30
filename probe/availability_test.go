@@ -2,7 +2,7 @@ package probe
 
 import (
 	"context"
-	"github.com/jiluoyun/jiluoyun-core/localproxy"
+	"github.com/peakpassvpn/ppvpn-core/localproxy"
 	"net/http"
 	"net/http/httptest"
 	"net/url"

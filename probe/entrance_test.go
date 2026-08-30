@@ -2,7 +2,7 @@ package probe
 
 import (
 	"context"
-	"github.com/jiluoyun/jiluoyun-core/profile"
+	"github.com/peakpassvpn/ppvpn-core/profile"
 	"net"
 	"testing"
 	"time"

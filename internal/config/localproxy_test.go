@@ -1,9 +1,9 @@
 package config
 
 import (
-	"github.com/jiluoyun/jiluoyun-core/localproxy"
-	"github.com/jiluoyun/jiluoyun-core/profile"
-	"github.com/jiluoyun/jiluoyun-core/systemproxy"
+	"github.com/peakpassvpn/ppvpn-core/localproxy"
+	"github.com/peakpassvpn/ppvpn-core/profile"
+	"github.com/peakpassvpn/ppvpn-core/systemproxy"
 	"github.com/sagernet/sing-box/option"
 	"testing"
 	"time"

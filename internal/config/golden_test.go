@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/jiluoyun/jiluoyun-core/profile"
+	"github.com/peakpassvpn/ppvpn-core/profile"
 	"github.com/sagernet/sing-box/include"
 	singjson "github.com/sagernet/sing/common/json"
 )

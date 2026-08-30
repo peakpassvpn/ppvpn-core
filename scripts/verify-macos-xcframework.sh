@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-framework="${1:-build/JiluoyunCore.xcframework}"
+framework="${1:-build/PPVPNCore.xcframework}"
 if [[ ! -d "${framework}" ]]; then
   echo "XCFramework not found: ${framework}" >&2
   exit 1
@@ -20,8 +20,8 @@ if [[ "${platform}" != "macos" ]]; then
   exit 1
 fi
 
-binary="${framework}/${library_identifier}/JiluoyunCore.framework/Versions/A/JiluoyunCore"
-header="${framework}/${library_identifier}/JiluoyunCore.framework/Versions/A/Headers/Mobile.objc.h"
+binary="${framework}/${library_identifier}/PPVPNCore.framework/Versions/A/PPVPNCore"
+header="${framework}/${library_identifier}/PPVPNCore.framework/Versions/A/Headers/Mobile.objc.h"
 [[ -f "${binary}" ]] || { echo "framework binary is missing" >&2; exit 1; }
 [[ -f "${header}" ]] || { echo "generated public header is missing" >&2; exit 1; }
 

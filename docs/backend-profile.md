@@ -1,6 +1,6 @@
 # Backend Profile v2
 
-本文是 `jiluoyun-backend` 生成 Profile 的规范。代码定义以 [`profile/model.go`](../profile/model.go) 和 [`profile/validate.go`](../profile/validate.go) 为准。
+本文是 `ppvpn-backend` 生成 Profile 的规范。代码定义以 [`profile/model.go`](../profile/model.go) 和 [`profile/validate.go`](../profile/validate.go) 为准。
 
 ## 顶层结构
 
