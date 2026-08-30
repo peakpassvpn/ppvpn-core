@@ -2,7 +2,7 @@ package mobile
 
 import (
 	"encoding/json"
-	"github.com/jiluoyun/jiluoyun-core/profile"
+	"github.com/peakpassvpn/ppvpn-core/profile"
 	"path/filepath"
 	"strings"
 	"testing"

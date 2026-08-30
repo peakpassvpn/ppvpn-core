@@ -14,14 +14,14 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/jiluoyun/jiluoyun-core/api"
-	"github.com/jiluoyun/jiluoyun-core/internal/config"
-	"github.com/jiluoyun/jiluoyun-core/internal/redact"
-	coreruntime "github.com/jiluoyun/jiluoyun-core/internal/runtime"
-	"github.com/jiluoyun/jiluoyun-core/ipc"
-	"github.com/jiluoyun/jiluoyun-core/probe"
-	"github.com/jiluoyun/jiluoyun-core/profile"
-	"github.com/jiluoyun/jiluoyun-core/version"
+	"github.com/peakpassvpn/ppvpn-core/api"
+	"github.com/peakpassvpn/ppvpn-core/internal/config"
+	"github.com/peakpassvpn/ppvpn-core/internal/redact"
+	coreruntime "github.com/peakpassvpn/ppvpn-core/internal/runtime"
+	"github.com/peakpassvpn/ppvpn-core/ipc"
+	"github.com/peakpassvpn/ppvpn-core/probe"
+	"github.com/peakpassvpn/ppvpn-core/profile"
+	"github.com/peakpassvpn/ppvpn-core/version"
 	"github.com/sagernet/sing-box/include"
 	singjson "github.com/sagernet/sing/common/json"
 )
@@ -34,7 +34,7 @@ func main() {
 }
 func run(args []string) error {
 	if len(args) == 0 {
-		return fmt.Errorf("usage: jiluoyun-core <version|validate|render|probe-entrance|serve>")
+		return fmt.Errorf("usage: ppvpn-core <version|validate|render|probe-entrance|serve>")
 	}
 	switch args[0] {
 	case "version":
@@ -70,7 +70,7 @@ func render(args []string) error {
 		return err
 	}
 	if flags.NArg() != 1 {
-		return fmt.Errorf("usage: jiluoyun-core render [--platform macos] profile.json")
+		return fmt.Errorf("usage: ppvpn-core render [--platform macos] profile.json")
 	}
 	p, err := readProfile(flags.Arg(0))
 	if err != nil {
@@ -100,7 +100,7 @@ func probeEntrance(args []string) error {
 		return err
 	}
 	if flags.NArg() != 1 {
-		return fmt.Errorf("usage: jiluoyun-core probe-entrance profile.json")
+		return fmt.Errorf("usage: ppvpn-core probe-entrance profile.json")
 	}
 	p, err := readProfile(flags.Arg(0))
 	if err != nil {
@@ -115,7 +115,7 @@ func probeEntrance(args []string) error {
 
 func validate(args []string) error {
 	if len(args) != 1 {
-		return fmt.Errorf("usage: jiluoyun-core validate profile.json")
+		return fmt.Errorf("usage: ppvpn-core validate profile.json")
 	}
 	p, err := readProfile(args[0])
 	if err != nil {

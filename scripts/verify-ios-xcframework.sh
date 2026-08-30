@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-framework="${1:-build/JiluoyunCore.xcframework}"
+framework="${1:-build/PPVPNCore.xcframework}"
 if [[ ! -d "${framework}" ]]; then
   echo "XCFramework not found: ${framework}" >&2
   exit 1
@@ -43,8 +43,8 @@ done
 [[ -n "${simulator_identifier}" ]] ||
   { echo "XCFramework is missing its iOS simulator library" >&2; exit 1; }
 
-device_binary="${framework}/${device_identifier}/JiluoyunCore.framework/JiluoyunCore"
-simulator_binary="${framework}/${simulator_identifier}/JiluoyunCore.framework/JiluoyunCore"
+device_binary="${framework}/${device_identifier}/PPVPNCore.framework/PPVPNCore"
+simulator_binary="${framework}/${simulator_identifier}/PPVPNCore.framework/PPVPNCore"
 [[ -f "${device_binary}" ]] || { echo "iOS device binary is missing" >&2; exit 1; }
 [[ -f "${simulator_binary}" ]] || { echo "iOS simulator binary is missing" >&2; exit 1; }
 

@@ -14,8 +14,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/jiluoyun/jiluoyun-core/profile"
-	"github.com/jiluoyun/jiluoyun-core/routing"
+	"github.com/peakpassvpn/ppvpn-core/profile"
+	"github.com/peakpassvpn/ppvpn-core/routing"
 )
 
 const (

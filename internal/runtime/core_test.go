@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/jiluoyun/jiluoyun-core/profile"
-	"github.com/jiluoyun/jiluoyun-core/routing"
+	"github.com/peakpassvpn/ppvpn-core/profile"
+	"github.com/peakpassvpn/ppvpn-core/routing"
 	"github.com/sagernet/sing-box/option"
 	"sync"
 	"testing"

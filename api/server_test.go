@@ -11,8 +11,8 @@ import (
 	"testing"
 	"time"
 
-	coreruntime "github.com/jiluoyun/jiluoyun-core/internal/runtime"
-	"github.com/jiluoyun/jiluoyun-core/profile"
+	coreruntime "github.com/peakpassvpn/ppvpn-core/internal/runtime"
+	"github.com/peakpassvpn/ppvpn-core/profile"
 )
 
 const testSecret = "0123456789abcdef0123456789abcdef"

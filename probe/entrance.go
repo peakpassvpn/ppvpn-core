@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/jiluoyun/jiluoyun-core/profile"
+	"github.com/peakpassvpn/ppvpn-core/profile"
 )
 
 type EntranceResult struct {

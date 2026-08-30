@@ -1,4 +1,4 @@
-module github.com/jiluoyun/jiluoyun-core
+module github.com/peakpassvpn/ppvpn-core
 
 go 1.25.0
 

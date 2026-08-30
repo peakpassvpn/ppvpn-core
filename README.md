@@ -1,6 +1,6 @@
-# jiluoyun-core
+# ppvpn-core
 
-`jiluoyun-core` 是极络云第一方网络核心。后端只下发版本化、平台无关的 Proxy Profile；核心负责严格校验、转换为固定版本的内部运行配置，并统一管理路由判定、运行时、探测、节点独立本地代理、流量统计、桌面 IPC 和平台绑定。
+`ppvpn-core` 是PPVPN第一方网络核心。后端只下发版本化、平台无关的 Proxy Profile；核心负责严格校验、转换为固定版本的内部运行配置，并统一管理路由判定、运行时、探测、节点独立本地代理、流量统计、桌面 IPC 和平台绑定。
 
 当前版本：Core `0.3.0`、Core API `v1`、Profile Schema `v2`、Flow Adapter `v1`。支持 Shadowsocks 2022（含多用户/EIH）、VLESS + REALITY 和 AnyTLS。
 
@@ -22,9 +22,9 @@
 go test ./...
 go test -race ./...
 go vet ./...
-go run ./cmd/jiluoyun-core version
-go run ./cmd/jiluoyun-core validate profile.json
-go run ./cmd/jiluoyun-core probe-entrance --timeout 5s --concurrency 4 profile.json
+go run ./cmd/ppvpn-core version
+go run ./cmd/ppvpn-core validate profile.json
+go run ./cmd/ppvpn-core probe-entrance --timeout 5s --concurrency 4 profile.json
 ```
 
 桌面客户端只能通过经过认证的 Core API 调用核心；移动端只能通过 `mobile.Bridge` 调用。后端和 App 均不得生成 sing-box JSON、依赖内部 tag 或调用 Clash API。Go 的 `internal/` 包边界会在编译期阻止外部项目导入 sing-box 配置与运行时类型。

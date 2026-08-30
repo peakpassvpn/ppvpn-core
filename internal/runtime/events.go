@@ -3,7 +3,7 @@ package runtime
 import (
 	"time"
 
-	"github.com/jiluoyun/jiluoyun-core/systemproxy"
+	"github.com/peakpassvpn/ppvpn-core/systemproxy"
 )
 
 type EventType string
