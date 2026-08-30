@@ -6,8 +6,8 @@
 
 ```sh
 go test ./...
-go build -trimpath -o build/jiluoyun-core ./cmd/jiluoyun-core
-./build/jiluoyun-core version
+go build -trimpath -o build/ppvpn-core ./cmd/ppvpn-core
+./build/ppvpn-core version
 ```
 
 预期版本响应：
@@ -21,8 +21,8 @@ go build -trimpath -o build/jiluoyun-core ./cmd/jiluoyun-core
 参考 [Backend Profile v2](backend-profile.md) 生成 `profile.json`，将所有演示地址和凭据换成真实服务值，然后先做离线校验：
 
 ```sh
-./build/jiluoyun-core validate profile.json
-./build/jiluoyun-core probe-entrance --timeout 5s --concurrency 4 profile.json
+./build/ppvpn-core validate profile.json
+./build/ppvpn-core probe-entrance --timeout 5s --concurrency 4 profile.json
 ```
 
 `validate` 成功输出 `profile valid`。入口探测只验证公网字面量 IP 的 TCP 可达性，不等价于节点协议可用。
@@ -30,7 +30,7 @@ go build -trimpath -o build/jiluoyun-core ./cmd/jiluoyun-core
 需要排查配置转换时可使用：
 
 ```sh
-./build/jiluoyun-core render --platform macos profile.json
+./build/ppvpn-core render --platform macos profile.json
 ```
 
 输出已经过脱敏，但仍只应在本机受控环境查看；该命令不是后端或产品客户端的配置生成接口。
@@ -40,10 +40,10 @@ go build -trimpath -o build/jiluoyun-core ./cmd/jiluoyun-core
 创建一个仅当前用户可访问的应用状态目录。以下路径仅为 macOS/Linux 开发示例：
 
 ```sh
-APP_STATE=/private/tmp/jiluoyun-core-demo
+APP_STATE=/private/tmp/ppvpn-core-demo
 mkdir -m 700 "$APP_STATE"
 
-./build/jiluoyun-core serve \
+./build/ppvpn-core serve \
   --socket "$APP_STATE/core.sock" \
   --session-secret-file "$APP_STATE/session.secret" \
   --state-dir "$APP_STATE/state" \
@@ -63,7 +63,7 @@ mkdir -m 700 "$APP_STATE"
 在另一个终端：
 
 ```sh
-APP_STATE=/private/tmp/jiluoyun-core-demo
+APP_STATE=/private/tmp/ppvpn-core-demo
 SECRET=$(cat "$APP_STATE/session.secret")
 
 curl --unix-socket "$APP_STATE/core.sock" \

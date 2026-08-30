@@ -9,12 +9,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/jiluoyun/jiluoyun-core/internal/config"
-	"github.com/jiluoyun/jiluoyun-core/localproxy"
-	"github.com/jiluoyun/jiluoyun-core/probe"
-	"github.com/jiluoyun/jiluoyun-core/profile"
-	"github.com/jiluoyun/jiluoyun-core/routing"
-	"github.com/jiluoyun/jiluoyun-core/systemproxy"
+	"github.com/peakpassvpn/ppvpn-core/internal/config"
+	"github.com/peakpassvpn/ppvpn-core/localproxy"
+	"github.com/peakpassvpn/ppvpn-core/probe"
+	"github.com/peakpassvpn/ppvpn-core/profile"
+	"github.com/peakpassvpn/ppvpn-core/routing"
+	"github.com/peakpassvpn/ppvpn-core/systemproxy"
 )
 
 type State string

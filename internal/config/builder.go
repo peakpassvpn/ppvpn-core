@@ -9,9 +9,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/jiluoyun/jiluoyun-core/localproxy"
-	"github.com/jiluoyun/jiluoyun-core/profile"
-	"github.com/jiluoyun/jiluoyun-core/systemproxy"
+	"github.com/peakpassvpn/ppvpn-core/localproxy"
+	"github.com/peakpassvpn/ppvpn-core/profile"
+	"github.com/peakpassvpn/ppvpn-core/systemproxy"
 	C "github.com/sagernet/sing-box/constant"
 	"github.com/sagernet/sing-box/option"
 	"github.com/sagernet/sing/common/auth"

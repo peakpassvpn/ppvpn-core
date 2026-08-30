@@ -11,10 +11,10 @@ import (
 	"sync"
 	"time"
 
-	coreruntime "github.com/jiluoyun/jiluoyun-core/internal/runtime"
-	"github.com/jiluoyun/jiluoyun-core/profile"
-	"github.com/jiluoyun/jiluoyun-core/routing"
-	"github.com/jiluoyun/jiluoyun-core/version"
+	coreruntime "github.com/peakpassvpn/ppvpn-core/internal/runtime"
+	"github.com/peakpassvpn/ppvpn-core/profile"
+	"github.com/peakpassvpn/ppvpn-core/routing"
+	"github.com/peakpassvpn/ppvpn-core/version"
 )
 
 type Bridge struct{ core *coreruntime.Core }

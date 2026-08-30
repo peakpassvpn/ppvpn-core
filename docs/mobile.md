@@ -38,13 +38,13 @@ PlatformCapabilities 示例：
 }
 ```
 
-若 `local_proxy.enabled=true`，`statePath` 必须是文件路径（例如 `<filesDir>/jiluoyun/local-proxies.json`），不是目录。宿主需提前确保父目录只对本 App 可见。
+若 `local_proxy.enabled=true`，`statePath` 必须是文件路径（例如 `<filesDir>/ppvpn/local-proxies.json`），不是目录。宿主需提前确保父目录只对本 App 可见。
 
 ## iOS
 
 ### 集成位置
 
-1. 用 `make build-mobile-ios` 生成 `build/JiluoyunCore.xcframework`。
+1. 用 `make build-mobile-ios` 生成 `build/PPVPNCore.xcframework`。
 2. 将 XCFramework 链接到 Packet Tunnel Extension target，而不是只链接主 App。
 3. 在 `NEPacketTunnelProvider` 中创建并持有 Bridge。
 4. `startTunnel` 中依次 ApplyProfile、配置宿主拥有的 `NEPacketTunnelNetworkSettings`、Start。
@@ -65,7 +65,7 @@ Profile 凭据只留在 Extension 内存。若通过 App Group 文件交换 Prof
 
 ## macOS
 
-`make build-mobile-macos` 生成 module `JiluoyunCore` 的 macOS 13+ arm64/x86_64
+`make build-mobile-macos` 生成 module `PPVPNCore` 的 macOS 13+ arm64/x86_64
 XCFramework。System Extension 在 `handleNewFlow` 内只调用无 I/O 的
 `ClassifyFlow`；PROXY flow 在后台把该 decision JSON 传给
 `OpenFlow(flowJSON, decisionJSON, timeoutMS)`，使用
@@ -81,7 +81,7 @@ deadline；`OpenFlow` 的拨号 `timeoutMS <= 0` 使用 15 秒默认值。
 
 ### 集成位置
 
-1. 用 `make build-mobile-android` 生成 `build/jiluoyun-core.aar`。
+1. 用 `make build-mobile-android` 生成 `build/ppvpn-core.aar`。
 2. 将 AAR 加入 app module，minSdk 至少 23。
 3. 在前台 `VpnService` 中创建并持有 Bridge。
 4. Service 获取 Profile 后 ApplyProfile；宿主用 `VpnService.Builder` 建立系统 TUN，再调用 Start。
@@ -99,7 +99,7 @@ val platform = """{
   "log_level":"info"
 }""".trimIndent()
 
-bridge = Mobile.newBridge(platform, File(filesDir, "jiluoyun/local-proxies.json").path)
+bridge = Mobile.newBridge(platform, File(filesDir, "ppvpn/local-proxies.json").path)
 bridge.applyProfile(profileJson)
 bridge.start()
 ```

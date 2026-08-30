@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/jiluoyun/jiluoyun-core/profile"
+	"github.com/peakpassvpn/ppvpn-core/profile"
 )
 
 func TestPublishedCapabilitiesMatchProfileAndHideImplementation(t *testing.T) {

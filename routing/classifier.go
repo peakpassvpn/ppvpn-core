@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/jiluoyun/jiluoyun-core/profile"
+	"github.com/peakpassvpn/ppvpn-core/profile"
 )
 
 type Entry string
